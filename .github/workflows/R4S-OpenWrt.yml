@@ -1,10 +1,13 @@
 name: R4S-OpenWrt
 
+  
 on:
-#  schedule:
-#    - cron: 5 6 * * 0
-  watch:
-    types: started
+  workflow_dispatch:
+    inputs:
+      package_clean:
+        description: 'check to make clean package'
+        default: 'false'
+        required: true
 
 jobs:
   build:
